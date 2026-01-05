@@ -1,4 +1,4 @@
-# Azure AI Factory Deployment Summaryasdfas
+# Azure AI Factory Deployment Summary
 
 This document summarizes all the steps taken to create a secure, enterprise-grade Azure AI Factory infrastructure with 96.6% security compliance.
 
