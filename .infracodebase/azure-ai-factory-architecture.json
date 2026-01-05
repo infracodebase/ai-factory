@@ -1,0 +1,291 @@
+{
+  "nodes": [
+    {
+      "id": "vnet",
+      "label": "Virtual Network",
+      "subtitle": "vnet-ai-factory",
+      "icon": "/icons/azure/networking/virtual-network.png",
+      "type": "container",
+      "layout": "grid"
+    },
+    {
+      "id": "subnet-apps",
+      "label": "Container Apps Subnet",
+      "subtitle": "10.0.1.0/24",
+      "icon": "/icons/azure/networking/virtual-network.png",
+      "type": "container",
+      "parentNode": "vnet",
+      "layout": "grid",
+      "decorators": [
+        {
+          "icon": "/icons/azure/networking/network-security-group.png",
+          "position": "bottom-right",
+          "tooltip": "NSG: Container Apps subnet protection"
+        }
+      ]
+    },
+    {
+      "id": "subnet-pe",
+      "label": "Private Endpoints Subnet",
+      "subtitle": "10.0.2.0/24",
+      "icon": "/icons/azure/networking/virtual-network.png",
+      "type": "container",
+      "parentNode": "vnet",
+      "layout": "row",
+      "decorators": [
+        {
+          "icon": "/icons/azure/networking/network-security-group.png",
+          "position": "bottom-right",
+          "tooltip": "NSG: Private endpoints subnet protection"
+        }
+      ]
+    },
+    {
+      "id": "cae",
+      "label": "Container Apps Environment",
+      "subtitle": "cae-ai-factory",
+      "icon": "/icons/azure/application/container-app-environment.png",
+      "parentNode": "subnet-apps",
+      "type": "container"
+    },
+    {
+      "id": "ca-api",
+      "label": "Container App",
+      "subtitle": "Agent API",
+      "icon": "/icons/azure/application/container-app.png",
+      "parentNode": "cae"
+    },
+    {
+      "id": "ca-ui",
+      "label": "Container App",
+      "subtitle": "Agent UI",
+      "icon": "/icons/azure/application/container-app.png",
+      "parentNode": "cae"
+    },
+    {
+      "id": "ca-workers",
+      "label": "Container App",
+      "subtitle": "Agent Workers",
+      "icon": "/icons/azure/application/container-app.png",
+      "parentNode": "cae"
+    },
+    {
+      "id": "pe-cosmos",
+      "label": "Private Endpoint",
+      "subtitle": "Cosmos DB",
+      "icon": "/icons/azure/networking/private-endpoint.png",
+      "parentNode": "subnet-pe"
+    },
+    {
+      "id": "pe-search",
+      "label": "Private Endpoint",
+      "subtitle": "AI Search",
+      "icon": "/icons/azure/networking/private-endpoint.png",
+      "parentNode": "subnet-pe",
+      "order": 2,
+      "position": {
+        "relativeTo": "ai-search",
+        "side": "below",
+        "alignWith": "ai-search"
+      }
+    },
+    {
+      "id": "pe-kv",
+      "label": "Private Endpoint",
+      "subtitle": "Key Vault",
+      "icon": "/icons/azure/networking/private-endpoint.png",
+      "parentNode": "subnet-pe",
+      "order": 4,
+      "position": {
+        "relativeTo": "key-vault",
+        "side": "above",
+        "alignWith": "key-vault"
+      }
+    },
+    {
+      "id": "pe-storage",
+      "label": "Private Endpoint",
+      "subtitle": "Storage",
+      "icon": "/icons/azure/networking/private-endpoint.png",
+      "parentNode": "subnet-pe",
+      "order": 5,
+      "position": {
+        "relativeTo": "storage",
+        "side": "above",
+        "alignWith": "storage"
+      }
+    },
+    {
+      "id": "pe-ai",
+      "label": "Private Endpoint",
+      "subtitle": "AI Services",
+      "icon": "/icons/azure/networking/private-endpoint.png",
+      "parentNode": "subnet-pe",
+      "order": 3,
+      "position": {
+        "relativeTo": "ai-services",
+        "side": "below",
+        "alignWith": "ai-services"
+      }
+    },
+    {
+      "id": "pe-ml",
+      "label": "Private Endpoint",
+      "subtitle": "ML Workspace",
+      "icon": "/icons/azure/networking/private-endpoint.png",
+      "parentNode": "subnet-pe",
+      "order": 6,
+      "position": {
+        "relativeTo": "ai-foundry",
+        "side": "above",
+        "alignWith": "ai-foundry"
+      }
+    },
+    {
+      "id": "ai-foundry",
+      "label": "AI Foundry Hub",
+      "subtitle": "ml-ai-factory",
+      "icon": "/icons/azure/ai/foundry.png"
+    },
+    {
+      "id": "cosmos",
+      "label": "Cosmos DB",
+      "subtitle": "cosmos-ai-factory",
+      "icon": "/icons/azure/data/azure-cosmos-db.png",
+      "position": {
+        "relativeTo": "cosmose",
+        "side": "above",
+        "alignWith": "pe-cosmose"
+      }
+    },
+    {
+      "id": "ai-search",
+      "label": "AI Search",
+      "subtitle": "search-ai-factory",
+      "icon": "/icons/azure/ai/search-service.png",
+      "position": {
+        "relativeTo": "pe-search",
+        "side": "below",
+        "alignWith": "pe-search"
+      }
+    },
+    {
+      "id": "ai-services",
+      "label": "Cognitive Services",
+      "subtitle": "cog-ai-factory",
+      "icon": "/icons/azure/ai/cognitive-services.png"
+    },
+    {
+      "id": "key-vault",
+      "label": "Key Vault",
+      "subtitle": "kv-ai-factory",
+      "icon": "/icons/azure/security/key-vault.png"
+    },
+    {
+      "id": "storage",
+      "label": "Storage Account",
+      "subtitle": "staifactory",
+      "icon": "/icons/azure/storage/storage-account.png"
+    },
+    {
+      "id": "log-analytics",
+      "label": "Log Analytics",
+      "subtitle": "law-ai-factory",
+      "icon": "/icons/azure/management/log-analytics-solution.png",
+      "position": {
+        "relativeTo": "app-insights",
+        "side": "below"
+      }
+    },
+    {
+      "id": "app-insights",
+      "label": "Application Insights",
+      "subtitle": "appi-ai-factory",
+      "icon": "/icons/azure/management/application-insights.png",
+      "position": {
+        "relativeTo": "ai-search",
+        "side": "right"
+      }
+    }
+  ],
+  "edges": [
+    {
+      "id": "e8",
+      "source": "ca-ui",
+      "target": "ca-api",
+      "label": "calls"
+    },
+    {
+      "id": "e9",
+      "source": "pe-cosmos",
+      "target": "cosmos",
+      "label": "private access"
+    },
+    {
+      "id": "e10",
+      "source": "pe-search",
+      "target": "ai-search",
+      "label": "private access"
+    },
+    {
+      "id": "e11",
+      "source": "pe-ai",
+      "target": "ai-services",
+      "label": "private access"
+    },
+    {
+      "id": "e12",
+      "source": "pe-storage",
+      "target": "storage",
+      "label": "private access"
+    },
+    {
+      "id": "e13",
+      "source": "pe-kv",
+      "target": "key-vault",
+      "label": "private access"
+    },
+    {
+      "id": "e14",
+      "source": "pe-ml",
+      "target": "ai-foundry",
+      "label": "private access"
+    },
+    {
+      "id": "e18",
+      "source": "ai-foundry",
+      "target": "storage",
+      "label": "artifacts"
+    },
+    {
+      "id": "monitoring",
+      "source": "cae",
+      "target": "app-insights",
+      "label": "telemetry"
+    },
+    {
+      "id": "foundry-data",
+      "source": "ai-foundry",
+      "target": "cosmos",
+      "label": "stores agents"
+    },
+    {
+      "id": "cae-to-logs",
+      "source": "cae",
+      "target": "log-analytics",
+      "label": "sends logs"
+    },
+    {
+      "id": "ai-foundry-to-logs",
+      "source": "ai-foundry",
+      "target": "log-analytics",
+      "label": "sends logs"
+    },
+    {
+      "id": "app-insights-to-logs",
+      "source": "app-insights",
+      "target": "log-analytics",
+      "label": "stores telemetry"
+    }
+  ]
+}

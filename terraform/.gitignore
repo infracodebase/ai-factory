@@ -1,0 +1,43 @@
+# Terraform files to ignore
+.terraform/
+*.tfstate
+*.tfstate.*
+*.tfvars
+!terraform.tfvars.example
+.terraform.lock.hcl
+
+# Crash log files
+crash.log
+crash.*.log
+
+# Exclude all .tfplan files except example ones
+*.tfplan
+*.tfplan.*
+
+# Include override files you do wish to add to version control
+# override.tf
+# override.tf.json
+# *_override.tf
+# *_override.tf.json
+
+# Include tfplan files you do wish to add to version control
+# example.tfplan
+
+# Ignore CLI configuration files
+.terraformrc
+terraform.rc
+
+# IDE and editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Environment files
+.env
+.env.*
+
+# OS specific files
+.DS_Store
+Thumbs.db

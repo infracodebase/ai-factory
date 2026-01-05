@@ -1,0 +1,33 @@
+# Example Terraform variables file for Azure AI Factory
+# Copy this file to terraform.tfvars and customize for your environment
+
+# Basic Configuration
+location     = "East US"
+environment  = "dev"
+
+# Optional: Custom resource names (leave empty for auto-generated)
+# ai_foundry_name                = "my-ai-factory-hub"
+# container_apps_environment_name = "my-container-env"
+# cosmos_db_name                 = "my-cosmos-db"
+# ai_search_name                 = "my-ai-search"
+# key_vault_name                 = "my-key-vault"
+# storage_account_name           = "mystorageaccount"
+
+# Network Configuration
+enable_private_endpoints = true
+
+# Performance Configuration
+cosmos_db_throughput = 3000  # Minimum for AI Foundry Agent Service
+ai_search_sku       = "standard"
+
+# Monitoring Configuration
+admin_email = "admin@yourcompany.com"
+
+
+# Resource Tags
+tags = {
+  Project     = "AI-Factory"
+  Owner       = "YourName"
+  Environment = "Development"
+  CostCenter  = "IT"
+}
