@@ -1,4 +1,4 @@
-# Azure AI Factory
+# Azure AI Factory (v2)
 
 This Terraform configuration deploys a complete AI Factory architecture on Azure, designed for developing and deploying AI agents and use cases in an isolated, repeatable environment.
 
